@@ -154,9 +154,9 @@ def perform_installation(mountpoint):
 		# Certain services might be running that affects the system during installation.
 		# Currently, only one such service is "reflector.service" which updates /etc/pacman.d/mirrorlist
 		# We need to wait for it before we continue since we opted in to use a custom mirror/region.
-		installation.log('Waiting for automatic mirror selection (reflector) to complete.', level=logging.INFO)
-		while archinstall.service_state('reflector') not in ('dead', 'failed'):
-			time.sleep(1)
+	#	installation.log('Waiting for automatic mirror selection (reflector) to complete.', level=logging.INFO)
+	#	while archinstall.service_state('reflector') not in ('dead', 'failed'):
+	#		time.sleep(1)
 
 		# If we've activated NTP, make sure it's active in the ISO too and
 		# make sure at least one time-sync finishes before we continue with the installation
